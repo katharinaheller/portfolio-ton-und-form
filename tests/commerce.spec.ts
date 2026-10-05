@@ -1,5 +1,66 @@
-import {test,expect} from '@playwright/test';import {cartReducer,sanitizeCart,subtotal,shipping} from '../src/lib/cart';
-test('cart uses valid variants, bounded quantities and integer cents',()=>{const valid=sanitizeCart([{sku:'TF-MT-350',quantity:2},{sku:'FAKE',quantity:10},{sku:'TF-MT-350',quantity:50}]);expect(valid).toEqual([{sku:'TF-MT-350',quantity:12}]);expect(subtotal(valid)).toBe(38400);expect(shipping(7900)).toBe(490);expect(shipping(8000)).toBe(0);expect(shipping(8000,'AT')).toBe(790);expect(cartReducer(valid,{type:'quantity',sku:'TF-MT-350',quantity:-2})).toEqual(valid);});
-test('search and filters have visible result states',async({page})=>{await page.goto('./kollektion/');await page.getByLabel('In der Kollektion suchen').fill('Salbei');await expect(page.locator('.product-card')).toHaveCount(1);await page.getByLabel('Glasur',{exact:true}).selectOption('Kreide');await expect(page.locator('.empty-state')).toBeVisible();await page.getByRole('button',{name:'Filter zurücksetzen'}).click();await expect(page.locator('.product-card')).toHaveCount(4);await page.getByLabel('Sortieren').selectOption('asc');await expect(page.locator('.product-card').first()).toContainText('Abendteller');});
-test('variant, persistent cart, shipping and demo checkout',async({page})=>{await page.goto('./produkt/morgentasse/');await page.getByLabel('350 ml').check();await expect(page.locator('.detail-price')).toContainText('32,00');await page.getByRole('button',{name:'In den Warenkorb'}).click();await expect(page.locator('.cart-message')).toContainText('350 ml');await page.getByRole('link',{name:'Zum Warenkorb',exact:false}).click();await page.getByLabel('Anzahl').selectOption('3');await expect(page.locator('.total')).toContainText('96,00');await page.reload();await expect(page.getByLabel('Anzahl')).toHaveValue('3');await page.getByRole('link',{name:'Weiter zur Demo-Kasse'}).click();await page.getByLabel(/Demo-Person · Österreich/).check();await expect(page.locator('.total')).toContainText('103,90');await page.getByRole('button',{name:'Demobestellung abschließen'}).click();await expect(page.locator('.form-error')).toContainText('bestätigen');await page.getByLabel(/Ich verstehe/).check();await page.getByRole('button',{name:'Demobestellung abschließen'}).click();await expect(page.locator('.checkout-complete')).toContainText('103,90');expect(await page.evaluate(()=>sessionStorage.getItem('ton-form-cart'))).toBeNull();});
-test('removing last item restores empty state',async({page})=>{await page.goto('./produkt/bauchvase/');await page.getByRole('button',{name:'In den Warenkorb'}).click();await page.getByRole('link',{name:'Zum Warenkorb',exact:false}).click();await page.getByRole('button',{name:/Entfernen/}).click();await expect(page.locator('.empty-state')).toContainText('noch leer');});
+import { test, expect } from "@playwright/test";
+import { cartReducer, sanitizeCart, subtotal, shipping } from "../src/lib/cart";
+test("cart uses valid variants, bounded quantities and integer cents", () => {
+  const valid = sanitizeCart([
+    { sku: "TF-MT-350", quantity: 2 },
+    { sku: "FAKE", quantity: 10 },
+    { sku: "TF-MT-350", quantity: 50 },
+  ]);
+  expect(valid).toEqual([{ sku: "TF-MT-350", quantity: 12 }]);
+  expect(subtotal(valid)).toBe(38400);
+  expect(shipping(7900)).toBe(490);
+  expect(shipping(8000)).toBe(0);
+  expect(shipping(8000, "AT")).toBe(790);
+  expect(
+    cartReducer(valid, { type: "quantity", sku: "TF-MT-350", quantity: -2 }),
+  ).toEqual(valid);
+});
+test("search and filters have visible result states", async ({ page }) => {
+  await page.goto("./kollektion/");
+  await page.getByLabel("In der Kollektion suchen").fill("Salbei");
+  await expect(page.locator(".product-card")).toHaveCount(1);
+  await page.getByLabel("Glasur", { exact: true }).selectOption("Kreide");
+  await expect(page.locator(".empty-state")).toBeVisible();
+  await page.getByRole("button", { name: "Filter zurücksetzen" }).click();
+  await expect(page.locator(".product-card")).toHaveCount(4);
+  await page.getByLabel("Sortieren").selectOption("asc");
+  await expect(page.locator(".product-card").first()).toContainText(
+    "Abendteller",
+  );
+});
+test("variant, persistent cart, shipping and demo checkout", async ({
+  page,
+}) => {
+  await page.goto("./produkt/morgentasse/");
+  await page.getByLabel("350 ml").check();
+  await expect(page.locator(".detail-price")).toContainText("32,00");
+  await page.getByRole("button", { name: "In den Warenkorb" }).click();
+  await expect(page.locator(".cart-message")).toContainText("350 ml");
+  await page.getByRole("link", { name: "Zum Warenkorb", exact: false }).click();
+  await page.getByLabel("Anzahl").selectOption("3");
+  await expect(page.locator(".total")).toContainText("96,00");
+  await page.reload();
+  await expect(page.getByLabel("Anzahl")).toHaveValue("3");
+  await page.getByRole("link", { name: "Weiter zur Demo-Kasse" }).click();
+  await page.getByLabel(/Demo-Person · Österreich/).check();
+  await expect(page.locator(".total")).toContainText("103,90");
+  await page
+    .getByRole("button", { name: "Demobestellung abschließen" })
+    .click();
+  await expect(page.locator(".form-error")).toContainText("bestätigen");
+  await page.getByLabel(/Ich verstehe/).check();
+  await page
+    .getByRole("button", { name: "Demobestellung abschließen" })
+    .click();
+  await expect(page.locator(".checkout-complete")).toContainText("103,90");
+  expect(
+    await page.evaluate(() => sessionStorage.getItem("ton-form-cart")),
+  ).toBeNull();
+});
+test("removing last item restores empty state", async ({ page }) => {
+  await page.goto("./produkt/bauchvase/");
+  await page.getByRole("button", { name: "In den Warenkorb" }).click();
+  await page.getByRole("link", { name: "Zum Warenkorb", exact: false }).click();
+  await page.getByRole("button", { name: /Entfernen/ }).click();
+  await expect(page.locator(".empty-state")).toContainText("noch leer");
+});

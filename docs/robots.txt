@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /portfolio-ton-und-form/kasse/
+Sitemap: https://katharinaheller.github.io/portfolio-ton-und-form/sitemap.xml

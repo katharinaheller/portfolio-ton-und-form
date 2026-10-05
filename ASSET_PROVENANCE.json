@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-05",
+  "rasterAssets": [
+    {
+      "name": "ceramics-hero",
+      "prompt": "Use case: product-mockup. Premium editorial campaign photograph for fictional German ceramics brand TON & FORM. Warm beige plaster pedestal and background, sculptural matte terracotta orange wide low bowl, off-white sculptural tall vase with one thin branch, two hand-thrown oatmeal stoneware mugs. Natural fine grain ceramic textures, strong angled afternoon sunlight, deliberate sophisticated still life composition, quiet generous negative space to left, products center-right. Earthy buttercream rust brown palette. 3:2 landscape composition. Original objects with no recognizable designer reference, no logos, no text, no watermark.",
+      "method": "Built-in image_gen",
+      "sourceIdentifier": "exec-36bac8a5-0cff-4e1c-aa33-b89f39fe0703.png",
+      "licenseNote": "Original AI-generated concept image, no third-party stock image. Not a claim of exclusive copyright. Subject to generation-service terms."
+    },
+    {
+      "name": "cup",
+      "prompt": "Use case: product-mockup. Premium e-commerce photograph for fictional artisan stoneware label. Single oatmeal cream ceramic coffee mug, rounded short cylinder with large rounded loop handle, tiny speckles and unglazed terracotta foot ring. Centered with generous space, seamless warm pale beige studio background, side light from upper left, soft shadow to right, eye-level slightly above rim, 85mm lens photorealistic subtle imperfect ceramic texture. Square image. No other objects, no text, no logos, no watermark.",
+      "method": "Built-in image_gen",
+      "sourceIdentifier": "exec-ed0193da-485e-4a7a-96c2-2d2df083fc1f.png",
+      "licenseNote": "Original AI-generated concept image, no third-party stock image. Not a claim of exclusive copyright. Subject to generation-service terms."
+    },
+    {
+      "name": "bowl",
+      "prompt": "Use case: product-mockup. Premium e-commerce photograph for fictional artisan stoneware label. Single rust terracotta orange ceramic wide low breakfast bowl, rounded simple profile with visible bowl interior, subtle matte glaze and tiny speckles. Centered with generous space, seamless warm pale beige studio background, side light from upper left, soft shadow to right, eye-level slightly above rim, 85mm lens photorealistic subtle imperfect ceramic texture. Square image. No other objects, no text, no logos, no watermark.",
+      "method": "Built-in image_gen",
+      "sourceIdentifier": "exec-e980ee77-da4e-4f77-ab93-52720e252d6a.png",
+      "licenseNote": "Original AI-generated concept image, no third-party stock image. Not a claim of exclusive copyright. Subject to generation-service terms."
+    },
+    {
+      "name": "vase",
+      "prompt": "Use case: product-mockup. Premium e-commerce photograph for fictional artisan stoneware label. Single ivory white sculptural ceramic vase, round bellied gently tapering to a narrow slightly flared neck, no handles, matte glaze and tiny speckles. Centered with generous space, seamless warm pale beige studio background, side light from upper left, soft shadow to right, eye-level slightly above rim, 85mm lens photorealistic subtle imperfect ceramic texture. Square image. No other objects, no branches, no text, no logos, no watermark.",
+      "method": "Built-in image_gen",
+      "sourceIdentifier": "exec-76a52b13-7f68-48fd-a5c9-b054d936f82f.png",
+      "licenseNote": "Original AI-generated concept image, no third-party stock image. Not a claim of exclusive copyright. Subject to generation-service terms."
+    },
+    {
+      "name": "plate",
+      "prompt": "Use case: product-mockup. Premium e-commerce photograph for fictional artisan stoneware label. A single sage olive green dinner plate, subtle wide low rim, matte hand-thrown stoneware and small speckles. Centered with generous space, seamless warm pale beige studio background, side light from upper left, soft shadow to right, viewing angle 35 degrees above plate to clearly see oval plate shape, 85mm lens photorealistic subtle imperfect ceramic texture. Square image. No other objects, no text, no logos, no watermark.",
+      "method": "Built-in image_gen",
+      "sourceIdentifier": "exec-8d3d3682-6b96-403a-aaba-3f1cdc0e1546.png",
+      "licenseNote": "Original AI-generated concept image, no third-party stock image. Not a claim of exclusive copyright. Subject to generation-service terms."
+    }
+  ],
+  "codeNativeArtwork": [
+    "Original SVG logo/favicon",
+    "Original CSS/SVG interface graphics",
+    "Original code-rendered social card"
+  ]
+}

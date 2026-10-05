@@ -1,0 +1,25 @@
+{
+  "name": "TON & FORM",
+  "slug": "ton-und-form",
+  "origin": "https://katharinaheller.github.io",
+  "basePath": "/portfolio-ton-und-form/",
+  "routes": [
+    "",
+    "kollektion/",
+    "kategorie/geschirr/",
+    "kategorie/wohnobjekte/",
+    "produkt/morgentasse/",
+    "produkt/alltagsschale/",
+    "produkt/bauchvase/",
+    "produkt/abendteller/",
+    "warenkorb/",
+    "kasse/",
+    "unsere-geschichte/",
+    "versand-retouren/",
+    "fragen/",
+    "impressum/",
+    "datenschutz/"
+  ],
+  "locale": "de-DE",
+  "output": "out"
+}

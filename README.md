@@ -58,6 +58,8 @@ Unique German title/description, canonical, Open Graph, Twitter card, local soci
 
 ## Quality evidence
 
+Verified on the public production URL on 2026-10-05: **6/6 functional tests passed**, 15 content routes checked, no console/network/link/image failures and no axe violations in the audited views. Mobile Lighthouse: **96 Performance / 100 Accessibility / 100 Best Practices / 100 SEO**. See the committed machine-readable production reports for scope and timestamps.
+
 Local/production browser audits, screenshots and Lighthouse reports are in `reports/`. Lighthouse figures are single-run mobile lab measurements, not field Core Web Vitals or an INP guarantee. The root PORTFOLIO_OVERVIEW.md records the final verified results. Functional tests live in `tests/`.
 
 ## Open-source and assets
@@ -69,4 +71,3 @@ See [CREDITS.md](CREDITS.md), [DEPENDENCY_LICENSES.md](DEPENDENCY_LICENSES.md), 
 ## Known intentional limits
 
 The catalog contains four fictional products in eight size variants. No inventory backend, account service, tax engine, legally operative checkout or payment gateway exists. Variant photographs are illustrative.
-
